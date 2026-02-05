@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exmondo | Water Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --exmondo-blue: #0ea5e9;
+            --exmondo-green: #22c55e;
+            --exmondo-dark: #0f172a;
+        }
+        .bg-gradient-exmondo {
+            background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+        }
+        .text-gradient-exmondo {
+            background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .lang-dropdown:hover .lang-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 font-sans">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-gradient-exmondo rounded-full flex items-center justify-center text-white font-bold text-xl shadow-lg">E</div>
+                    <span class="text-2xl font-bold tracking-tight text-slate-800">EX<span class="text-sky-500">MONDO</span></span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8 font-medium">
+                    <a href="#accueil" data-i18n="nav-home" class="hover:text-sky-500 transition">Home</a>
+                    <a href="#activites" data-i18n="nav-activities" class="hover:text-sky-500 transition">Activities</a>
+                    <a href="#solutions" data-i18n="nav-solutions" class="hover:text-sky-500 transition">Solutions</a>
+                    
+                    <!-- Language Selector -->
+                    <div class="relative lang-dropdown group">
+                        <button id="current-lang-btn" class="flex items-center space-x-2 px-3 py-1 bg-slate-100 rounded-lg hover:bg-slate-200 transition">
+                            <span id="current-lang-flag" class="text-lg">🇬🇧</span>
+                            <i class="fa-solid fa-chevron-down text-xs text-slate-500"></i>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-32 bg-white rounded-xl shadow-xl border border-slate-100 hidden lang-menu overflow-hidden">
+                            <button onclick="changeLanguage('en')" class="w-full flex items-center space-x-3 px-4 py-3 hover:bg-slate-50 transition border-b border-slate-100 text-left">
+                                <span>🇬🇧</span> <span class="text-sm">English</span>
+                            </button>
+                            <button onclick="changeLanguage('fr')" class="w-full flex items-center space-x-3 px-4 py-3 hover:bg-slate-50 transition border-b border-slate-100 text-left">
+                                <span>🇫🇷</span> <span class="text-sm">Français</span>
+                            </button>
+                            <button onclick="changeLanguage('es')" class="w-full flex items-center space-x-3 px-4 py-3 hover:bg-slate-50 transition text-left">
+                                <span>🇪🇸</span> <span class="text-sm">Español</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <a href="#contact" data-i18n="nav-contact" class="px-5 py-2 bg-gradient-exmondo text-white rounded-full hover:opacity-90 transition shadow-lg shadow-sky-200">Contact</a>
+                </div>
+                <button class="md:hidden text-2xl"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
+                <div>
+                    <span data-i18n="hero-tag" class="inline-block px-4 py-1.5 mb-6 text-sm font-semibold tracking-wide text-sky-600 uppercase bg-sky-50 rounded-full border border-sky-100">The future of water</span>
+                    <h1 class="text-5xl lg:text-6xl font-extrabold text-slate-900 leading-tight mb-6">
+                        <span data-i18n="hero-title-1">Innovative</span> <span data-i18n="hero-title-2" class="text-gradient-exmondo">Water</span> <span data-i18n="hero-title-3">Solutions for Industry</span>
+                    </h1>
+                    <p data-i18n="hero-desc" class="text-xl text-slate-600 mb-8 leading-relaxed">
+                        Exmondo transforms water resources into strategic assets through cutting-edge membrane purification technologies. Based in Spain, we serve the global industry.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#contact" data-i18n="hero-cta-1" class="px-8 py-4 bg-slate-900 text-white rounded-xl font-bold hover:bg-slate-800 transition text-center">Start a Project</a>
+                        <a href="#activites" data-i18n="hero-cta-2" class="px-8 py-4 bg-white border border-slate-200 text-slate-700 rounded-xl font-bold hover:bg-slate-50 transition text-center">Our Services</a>
+                    </div>
+                </div>
+                <div class="mt-16 lg:mt-0 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=1000" alt="Industrial Water Plant" class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-sky-500/10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-[600px] h-[600px] bg-sky-100/50 rounded-full blur-3xl"></div>
+    </section>
+
+    <!-- Key Activities -->
+    <section id="activites" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 data-i18n="activities-title" class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4 text-center">Key Expertise</h2>
+                <div class="h-1.5 w-20 bg-gradient-exmondo mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="p-8 bg-slate-50 rounded-2xl card-hover border border-slate-100 text-center">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-sky-500 text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-drafting-compass"></i>
+                    </div>
+                    <h3 data-i18n="act1-title" class="text-xl font-bold mb-4 text-slate-800">Engineering & Design</h3>
+                    <p data-i18n="act1-desc" class="text-slate-600 leading-relaxed">Custom design for complex solutions. Flow analysis and sizing of industrial installations.</p>
+                </div>
+
+                <div class="p-8 bg-slate-50 rounded-2xl card-hover border border-slate-100 text-center">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-green-500 text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3 data-i18n="act2-title" class="text-xl font-bold mb-4 text-slate-800">Reverse Osmosis (RO)</h3>
+                    <p data-i18n="act2-desc" class="text-slate-600 leading-relaxed">Expertise in membrane purification. Removing impurities to ensure ultra-pure process water.</p>
+                </div>
+
+                <div class="p-8 bg-slate-50 rounded-2xl card-hover border border-slate-100 text-center">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-sky-500 text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+                    <h3 data-i18n="act3-title" class="text-xl font-bold mb-4 text-slate-800">Turnkey Solutions</h3>
+                    <p data-i18n="act3-desc" class="text-slate-600 leading-relaxed">Full cycle management: pre-treatment, RO installation and post-treatment. Commissioning and guaranteed testing.</p>
+                </div>
+
+                <div class="p-8 bg-slate-50 rounded-2xl card-hover border border-slate-100 text-center">
+                    <div class="w-14 h-14 bg-white rounded-xl shadow-sm flex items-center justify-center text-green-500 text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-gears"></i>
+                    </div>
+                    <h3 data-i18n="act4-title" class="text-xl font-bold mb-4 text-slate-800">Maintenance & Support</h3>
+                    <p data-i18n="act4-desc" class="text-slate-600 leading-relaxed">Continuous technical monitoring, component supply, and energy optimization of existing infrastructures.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1584467541268-b040f83be3fd?auto=format&fit=crop&q=80&w=1000" alt="Water treatment technology" class="rounded-3xl shadow-xl">
+                </div>
+                <div class="order-1 lg:order-2 mb-12 lg:mb-0">
+                    <h2 data-i18n="sol-title" class="text-3xl lg:text-4xl font-bold text-slate-900 mb-6 text-center lg:text-left">Our Technology Solutions</h2>
+                    <p data-i18n="sol-desc" class="text-lg text-slate-600 mb-8">
+                        We integrate the world's best technologies from our operational center in Spain to meet the strictest requirements.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start space-x-3 text-center lg:text-left">
+                            <i class="fa-solid fa-check-circle text-sky-500 mt-1"></i>
+                            <span data-i18n="sol-li1" class="text-slate-700">Modular and scalable RO systems.</span>
+                        </li>
+                        <li class="flex items-start space-x-3 text-center lg:text-left">
+                            <i class="fa-solid fa-check-circle text-sky-500 mt-1"></i>
+                            <span data-i18n="sol-li2" class="text-slate-700">Advanced multi-stage filtration.</span>
+                        </li>
+                        <li class="flex items-start space-x-3 text-center lg:text-left">
+                            <i class="fa-solid fa-check-circle text-sky-500 mt-1"></i>
+                            <span data-i18n="sol-li3" class="text-slate-700">Real-time quality monitoring.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-slate-900 text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-20 items-center">
+                <div>
+                    <h2 data-i18n="contact-title" class="text-4xl font-bold mb-6">Ready to optimize your water management?</h2>
+                    <p data-i18n="contact-desc" class="text-slate-400 text-lg mb-8 leading-relaxed text-center lg:text-left">
+                        Our Spain-based teams operate worldwide for your water infrastructure projects.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-sky-400 text-center">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <div data-i18n="contact-email" class="text-sm text-slate-400 text-center lg:text-left">Email</div>
+                                <div class="font-bold text-center lg:text-left">contact@exmondo.com</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-green-400 text-center">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <div data-i18n="contact-loc" class="text-sm text-slate-400 text-center lg:text-left">Location</div>
+                                <div class="font-bold flex items-center justify-center lg:justify-start space-x-2">
+                                    <span data-i18n="contact-city">Madrid, Spain</span>
+                                    <span>🇪🇸</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12 lg:mt-0 bg-white p-8 rounded-3xl text-slate-900 shadow-2xl">
+                    <form id="contactForm" class="space-y-4">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label data-i18n="form-fname" class="block text-sm font-semibold mb-2">First Name</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-sky-500 outline-none transition">
+                            </div>
+                            <div>
+                                <label data-i18n="form-lname" class="block text-sm font-semibold mb-2">Last Name</label>
+                                <input type="text" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-sky-500 outline-none transition">
+                            </div>
+                        </div>
+                        <div>
+                            <label data-i18n="form-email" class="block text-sm font-semibold mb-2">Email</label>
+                            <input type="email" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-sky-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label data-i18n="form-msg" class="block text-sm font-semibold mb-2">Message</label>
+                            <textarea rows="4" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-sky-500 outline-none transition"></textarea>
+                        </div>
+                        <button type="submit" data-i18n="form-btn" class="w-full py-4 bg-gradient-exmondo text-white font-bold rounded-xl shadow-lg hover:opacity-90 transition">
+                            Send Request
+                        </button>
+                    </form>
+                    <div id="successMsg" data-i18n="form-success" class="hidden mt-4 p-4 bg-green-50 text-green-700 rounded-xl text-center font-medium border border-green-100">
+                        Thank you! Your message has been sent successfully.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full opacity-10">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0ea5e9" d="M0,192L48,197.3C96,203,192,213,288,192C384,171,480,117,576,117.3C672,117,768,171,864,181.3C960,192,1056,160,1152,138.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="flex items-center space-x-2 mb-6 md:mb-0 justify-center md:justify-start">
+                <div class="w-8 h-8 bg-gradient-exmondo rounded-full flex items-center justify-center text-white font-bold">E</div>
+                <span class="text-xl font-bold tracking-tight text-slate-800">EX<span class="text-sky-500">MONDO</span></span>
+            </div>
+            <div data-i18n="footer-copy" class="text-slate-500 text-sm">
+                &copy; 2026 Exmondo Water Technologies SL. All rights reserved.
+            </div>
+            <div class="flex space-x-6 mt-6 md:mt-0 justify-center md:justify-end">
+                <a href="https://linkedin.com" target="_blank" class="text-slate-400 hover:text-sky-500 transition text-xl"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" class="text-slate-400 hover:text-sky-500 transition text-xl"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dictionary for translations
+        const translations = {
+            fr: {
+                "nav-home": "Accueil",
+                "nav-activities": "Activités",
+                "nav-solutions": "Solutions",
+                "nav-contact": "Contact",
+                "hero-tag": "L'avenir de l'eau",
+                "hero-title-1": "Solutions d'Eau",
+                "hero-title-2": "Innovantes",
+                "hero-title-3": "pour l'Industrie",
+                "hero-desc": "Exmondo transforme les ressources hydriques en actifs stratégiques grâce à des technologies de purification membranaire de pointe. Basés en Espagne, nous servons l'industrie globale.",
+                "hero-cta-1": "Démarrer un projet",
+                "hero-cta-2": "Nos services",
+                "hero-stat": "Capacité RO standard",
+                "activities-title": "Expertises Clés",
+                "act1-title": "Ingénierie & Conception",
+                "act1-desc": "Conception sur mesure de solutions complexes. Analyse des flux et dimensionnement d'installations industrielles.",
+                "act2-title": "Osmose Inverse (RO)",
+                "act2-desc": "Expertise en purification membranaire. Élimination des impuretés pour une eau de processus ultra-pure.",
+                "act3-title": "Solutions Clés en Main",
+                "act3-desc": "Gestion complète : pré-traitement, installation RO et post-traitement. Mise en service et tests garantis.",
+                "act4-title": "Maintenance & Support",
+                "act4-desc": "Suivi technique continu, fourniture de composants et optimisation énergétique des infrastructures.",
+                "sol-title": "Nos Solutions Technologiques",
+                "sol-desc": "Nous intégrons les meilleures technologies mondiales depuis notre centre opérationnel en Espagne pour répondre aux exigences les plus strictes.",
+                "sol-li1": "Systèmes RO modulaires et évolutifs.",
+                "sol-li2": "Filtration multi-étapes avancée.",
+                "sol-li3": "Monitoring en temps réel de la qualité.",
+                "contact-title": "Prêt à optimiser votre gestion de l'eau ?",
+                "contact-desc": "Nos équipes basées en Espagne interviennent partout dans le monde pour vos projets d'infrastructure hydrique.",
+                "contact-email": "Email",
+                "contact-loc": "Localisation",
+                "contact-city": "Madrid, Espagne",
+                "form-fname": "Prénom",
+                "form-lname": "Nom",
+                "form-email": "Email",
+                "form-msg": "Message",
+                "form-btn": "Envoyer la demande",
+                "form-success": "Merci ! Votre message a été envoyé avec succès.",
+                "footer-copy": "&copy; 2026 Exmondo Water Technologies SL. Tous droits réservés."
+            },
+            en: {
+                "nav-home": "Home",
+                "nav-activities": "Activities",
+                "nav-solutions": "Solutions",
+                "nav-contact": "Contact",
+                "hero-tag": "The future of water",
+                "hero-title-1": "Innovative",
+                "hero-title-2": "Water",
+                "hero-title-3": "Solutions for Industry",
+                "hero-desc": "Exmondo transforms water resources into strategic assets through cutting-edge membrane purification technologies. Based in Spain, we serve the global industry.",
+                "hero-cta-1": "Start a Project",
+                "hero-cta-2": "Our Services",
+                "hero-stat": "Standard RO Capacity",
+                "activities-title": "Key Expertise",
+                "act1-title": "Engineering & Design",
+                "act1-desc": "Custom design for complex solutions. Flow analysis and sizing of industrial installations.",
+                "act2-title": "Reverse Osmosis (RO)",
+                "act2-desc": "Expertise in membrane purification. Removing impurities to ensure ultra-pure process water.",
+                "act3-title": "Turnkey Solutions",
+                "act3-desc": "Full cycle management: pre-treatment, RO installation and post-treatment. Commissioning and guaranteed testing.",
+                "act4-title": "Maintenance & Support",
+                "act4-desc": "Continuous technical monitoring, component supply, and energy optimization of existing infrastructures.",
+                "sol-title": "Our Technology Solutions",
+                "sol-desc": "We integrate the world's best technologies from our operational center in Spain to meet the strictest requirements.",
+                "sol-li1": "Modular and scalable RO systems.",
+                "sol-li2": "Advanced multi-stage filtration.",
+                "sol-li3": "Real-time quality monitoring.",
+                "contact-title": "Ready to optimize your water management?",
+                "contact-desc": "Our Spain-based teams operate worldwide for your water infrastructure projects.",
+                "contact-email": "Email",
+                "contact-loc": "Location",
+                "contact-city": "Madrid, Spain",
+                "form-fname": "First Name",
+                "form-lname": "Last Name",
+                "form-email": "Email",
+                "form-msg": "Message",
+                "form-btn": "Send Request",
+                "form-success": "Thank you! Your message has been sent successfully.",
+                "footer-copy": "&copy; 2026 Exmondo Water Technologies SL. All rights reserved."
+            },
+            es: {
+                "nav-home": "Inicio",
+                "nav-activities": "Actividades",
+                "nav-solutions": "Soluciones",
+                "nav-contact": "Contacto",
+                "hero-tag": "El futuro del agua",
+                "hero-title-1": "Soluciones de Agua",
+                "hero-title-2": "Innovadoras",
+                "hero-title-3": "para la Industria",
+                "hero-desc": "Exmondo transforma los recursos hídricos en activos estratégicos mediante tecnologías de purificación por membrana de vanguardia. Con sede en España, servimos a la industria global.",
+                "hero-cta-1": "Iniciar un proyecto",
+                "hero-cta-2": "Nuestros servicios",
+                "hero-stat": "Capacidad RO estándar",
+                "activities-title": "Experiencia Clave",
+                "act1-title": "Ingeniería y Diseño",
+                "act1-desc": "Diseño a medida para soluciones complejas. Análisis de flujo y dimensionamiento de instalaciones industriales.",
+                "act2-title": "Ósmosis Inversa (RO)",
+                "act2-desc": "Expertos en purificación por membrana. Eliminación de impurezas para garantizar agua de proceso ultra pura.",
+                "act3-title": "Soluciones Llave en Mano",
+                "act3-desc": "Gestión del ciclo completo: pretratamiento, instalación de RO y post-tratamiento. Puesta en marcha y pruebas garantizadas.",
+                "act4-title": "Mantenimiento y Soporte",
+                "act4-desc": "Seguimiento técnico continuo, suministro de componentes y optimización energética de infraestructuras existentes.",
+                "sol-title": "Nuestras Soluciones Tecnológicas",
+                "sol-desc": "Integramos las mejores tecnologías mundiales desde nuestro centro operativo en España para cumplir con los requisitos más estrictos.",
+                "sol-li1": "Sistemas de RO modulares y escalables.",
+                "sol-li2": "Filtración multietapa avanzada.",
+                "sol-li3": "Monitoreo de calidad en tiempo real.",
+                "contact-title": "¿Listo para optimizar su gestión del agua?",
+                "contact-desc": "Nuestros equipos en España operan en todo el mundo para sus proyectos de infraestructura hídrica.",
+                "contact-email": "Email",
+                "contact-loc": "Ubicación",
+                "contact-city": "Madrid, España",
+                "form-fname": "Nombre",
+                "form-lname": "Apellido",
+                "form-email": "Email",
+                "form-msg": "Mensaje",
+                "form-btn": "Enviar solicitud",
+                "form-success": "¡Gracias! Su mensaje ha sido enviado con éxito.",
+                "footer-copy": "&copy; 2026 Exmondo Water Technologies SL. Todos los derechos reservados."
+            }
+        };
+
+        // Function to change language
+        function changeLanguage(lang) {
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            // Update flag button
+            const flags = { fr: '🇫🇷', en: '🇬🇧', es: '🇪🇸' };
+            document.getElementById('current-lang-flag').innerText = flags[lang];
+            
+            // Close menu
+            document.querySelector('.lang-menu').style.display = 'none';
+            setTimeout(() => { document.querySelector('.lang-menu').style.removeProperty('display'); }, 100);
+            
+            // Update page lang attribute
+            document.documentElement.lang = lang;
+        }
+
+        // Form handling
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                this.classList.add('hidden');
+                document.getElementById('successMsg').classList.remove('hidden');
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId !== "#") {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
